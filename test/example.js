@@ -4,6 +4,7 @@ import {
     RemoteDirection
 } from "androidtv-remote";
 
+
 import Readline from "readline";
 
 let line = Readline.createInterface({
@@ -11,13 +12,13 @@ let line = Readline.createInterface({
     output: process.stdout
 });
 
-let host = "192.168.1.31";
+let host = "192.168.0.231";
 let options = {
     pairing_port : 6467,
     remote_port : 6466,
-    name : 'androidtv-remote',
+    name : 'androidtv-remote2',
 }
-
+console.log("Creating Android TV Remote");
 let androidRemote = new AndroidRemote(host, options)
 
 androidRemote.on('secret', () => {
@@ -35,7 +36,8 @@ androidRemote.on('volume', (volume) => {
 });
 
 androidRemote.on('current_app', (current_app) => {
-    console.debug("Current App : " + current_app);
+    
+    console.debug("Foreground App : " + current_app,new Date().toLocaleTimeString());
 });
 
 androidRemote.on('error', (error) => {

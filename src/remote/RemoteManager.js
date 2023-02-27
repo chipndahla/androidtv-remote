@@ -51,7 +51,7 @@ class RemoteManager extends EventEmitter {
 
                     if(!message.remotePingRequest){
                         //console.debug(this.host + " Receive : " + Array.from(this.chunks));
-                        console.debug(this.host + " Receive : " + JSON.stringify(message.toJSON()));
+                       // console.debug(this.host + " Receive : " + JSON.stringify(message.toJSON()));
                     }
 
                     if(message.remoteConfigure){

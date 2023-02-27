@@ -72,8 +72,8 @@ class PairingManager extends EventEmitter {
 
                     let message = pairingMessageManager.parse(this.chunks);
 
-                    console.debug("Receive : " + Array.from(this.chunks));
-                    console.debug("Receive : " + JSON.stringify(message.toJSON()));
+                   // console.debug("Receive : " + Array.from(this.chunks));
+                   // console.debug("Receive : " + JSON.stringify(message.toJSON()));
 
                     if (message.status !== pairingMessageManager.Status.STATUS_OK){
                         this.client.destroy(new Error(message.status));
